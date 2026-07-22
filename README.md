@@ -39,7 +39,7 @@ Methodology critiques welcome — open an issue. The schema is expected to break
 
 ## Quarterly report
 
-Findings are published quarterly as **State of AI Pricing** (first edition: Q4 2026). Subscribe via [Substack](#) for releases.
+Findings are published quarterly as **State of AI Pricing** (first edition: Q4 2026), released openly in this repository. Analysis lives in the reports; the dataset stays neutral.
 
 ## Contributing
 
