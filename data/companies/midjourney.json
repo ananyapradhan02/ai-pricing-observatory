@@ -1,0 +1,50 @@
+{
+  "company": "Midjourney",
+  "slug": "midjourney",
+  "website": "https://www.midjourney.com",
+  "category": "creative_ai",
+  "hq_country": "US",
+  "notes": "GPU-time metering (not credits) with a two-speed system: metered Fast hours + free unlimited Relax queue. Headline prices unchanged 2024–2026 — rare price stability; the structural change was Video V1 (June 2025) consuming ~8x image GPU time. No free tier, no enterprise tier; revenue >$1M companies must buy Pro/Mega (ToS).",
+  "change_events": [
+    {
+      "date": "2025-06-18",
+      "change_type": "meter_change",
+      "description": "Video V1 launch: video jobs cost ~8x an image job in GPU time (reported figure — Holz statement); unlimited Relax video added to Pro/Mega. Headline plan prices unchanged — a capability-expansion that repriced effective usage.",
+      "announced": true,
+      "notice_period": "immediate",
+      "grandfathering": "n/a",
+      "user_reaction": "Fast-hour burn complaints from video users",
+      "sources": [ { "url": "https://www.aicerts.ai/news/generative-motion-debut-midjourney-video-v1-launch/", "accessed": "2026-07-22", "note": "Launch coverage; 8x figure reported" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["usage", "hybrid"],
+      "free_tier": false,
+      "trial": "none (trials historically suspended)",
+      "plans": [
+        { "name": "Basic", "price_usd": 10, "billing_unit": "flat/month (annual 20% off, upfront)", "billing_period": "monthly", "whats_gated": "3.3 Fast GPU hrs/mo (200 min); NO Relax mode", "limits": { "quota": "3.3 Fast GPU hours/month", "unlimited_definition": "", "rate_limit": "concurrency caps; 10 queued jobs", "throttle_behavior": "buy extra Fast time $4/hr or wait for cycle" } },
+        { "name": "Standard", "price_usd": 30, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "15 Fast GPU hrs + unlimited Relax images; HD video (consumes Fast time)", "limits": { "quota": "15 Fast GPU hours/month", "unlimited_definition": "unlimited Relax = free queue with wait times", "rate_limit": "", "throttle_behavior": "$4/hr top-up" } },
+        { "name": "Pro", "price_usd": 60, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "30 Fast hrs, Stealth mode, Relax video (SD), 12 Fast/3 Relax concurrent jobs", "limits": null },
+        { "name": "Mega", "price_usd": 120, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "60 Fast hrs, Stealth, Relax video", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "Fast GPU time", "rate": "$4/hour for extra Fast time (all plans); video ~8x image GPU cost (reported)", "overage_behavior": "top-up or fall back to Relax queue (Standard+)" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": true,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none published"
+      },
+      "enterprise": { "custom_pricing": false, "reported_minimum": "", "platform_fee": "companies >$1M gross revenue must buy Pro/Mega (ToS)" },
+      "sources": [
+        { "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans", "accessed": "2026-07-22", "note": "Primary plan docs, fetched" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

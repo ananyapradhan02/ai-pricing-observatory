@@ -1,0 +1,58 @@
+{
+  "company": "Instantly",
+  "slug": "instantly",
+  "website": "https://instantly.ai",
+  "category": "gtm_tooling",
+  "hq_country": "US",
+  "notes": "Modular three-product pricing (Outreach + Credits + bundles) with a price-increase-by-repackaging pattern: Growth widely listed $37/mo in 2024–25, now $47 monthly with $37.60 as the annual rate. 'Unlimited' = accounts and warmup; sending is hard-capped per plan. VIP managed tiers to $10K/mo listed in page FAQ.",
+  "change_events": [
+    {
+      "date": "2026-01-15",
+      "change_type": "price_increase",
+      "description": "Growth repositioned from ~$37/mo to $47 monthly ($37.60 annual), with new bundle SKUs (Starter/Scale/Agency) — effective increase via repackaging; date approximated, reported only.",
+      "announced": false,
+      "notice_period": "unknown",
+      "grandfathering": "unknown",
+      "user_reaction": "Third-party pricing guides flagged the shift",
+      "sources": [ { "url": "https://woodpecker.co/blog/instantly-ai-pricing/", "accessed": "2026-07-22", "note": "Reported price history" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["hybrid", "credit", "flat"],
+      "free_tier": false,
+      "trial": "trial available",
+      "plans": [
+        { "name": "Outreach Growth", "price_usd": 47, "billing_unit": "flat/month ($37.60 annual; annual = 10% off)", "billing_period": "monthly", "whats_gated": "Unlimited email accounts + warmup, 1,000 contacts, 5,000 emails/mo", "limits": { "quota": "5,000 emails/month, 1,000 uploaded contacts", "unlimited_definition": "unlimited ACCOUNTS and WARMUP; sending hard-capped", "rate_limit": "", "throttle_behavior": "upgrade tier" } },
+        { "name": "Outreach Hypergrowth", "price_usd": 97, "billing_unit": "flat/month ($77.60 annual)", "billing_period": "monthly", "whats_gated": "25k contacts, 100k emails/mo", "limits": null },
+        { "name": "Outreach Light Speed", "price_usd": 358, "billing_unit": "flat/month ($286.30 annual)", "billing_period": "monthly", "whats_gated": "100k contacts, 500k emails/mo, SISR dedicated IP rotation", "limits": null },
+        { "name": "Growth Credits", "price_usd": 47, "billing_unit": "flat/month, 1,500–2,000 credits (ladders to Hyper Credits $197+/10k–200k)", "billing_period": "monthly", "whats_gated": "Leads from 450M database (1 credit = 1 contact), verification, enrichment, AI agents", "limits": null },
+        { "name": "Bundles", "price_usd": 94, "billing_unit": "Starter $94/mo ($85 annual); Scale $194 ($175); Agency $555 ($500)", "billing_period": "monthly", "whats_gated": "Outreach + Credits combined", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "emails sent", "rate": "bundled caps per tier", "overage_behavior": "upgrade" },
+        { "meter": "lead credits", "rate": "1 credit = 1 contact from database", "overage_behavior": "higher credit tier" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "1 credit = 1 lead/contact; also spent on verification, enrichment, AI Sales/Reply Agent",
+        "credit_to_compute_mapping": "Published per feature",
+        "failed_actions_consume_credits": null,
+        "expiry": "monthly-plan credits expire 2 months after purchase; annual credits after 1 year (help doc, reported)",
+        "purchase_mechanics": "subscription tiers + separate credit product line"
+      },
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "VIP managed: Essential $2K/mo, Platinum $4K/mo, Diamond $10K/mo (page FAQ)" },
+      "sources": [
+        { "url": "https://instantly.ai/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

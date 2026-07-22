@@ -1,0 +1,49 @@
+{
+  "company": "Perplexity",
+  "slug": "perplexity",
+  "website": "https://www.perplexity.ai",
+  "category": "search_ai",
+  "hq_country": "US",
+  "notes": "Time-windowed soft quotas rather than credits; commerce layer (Buy with Pro / Merchant Program) is a distribution play with zero merchant fees. Pricing page is JS-rendered — Pro price is reported-only; Max verified via help center.",
+  "change_events": [
+    {
+      "date": "2026-03-18",
+      "change_type": "price_decrease",
+      "description": "Comet browser — launched July 2025 as a Max-gated ($200/mo) product — made free on all platforms. Comet Plus publisher-content add-on $5/mo (reported).",
+      "announced": true,
+      "notice_period": "immediate",
+      "grandfathering": "n/a (moved down-market)",
+      "user_reaction": "Positive",
+      "sources": [ { "url": "https://www.eesel.ai/blog/perplexity-comet-pricing", "accessed": "2026-07-22", "note": "Reported; Comet launch/paywall history" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["seat"],
+      "free_tier": true,
+      "trial": "free tier",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Basic search; limited advanced-model access", "limits": null },
+        { "name": "Pro", "price_usd": 20, "billing_unit": "flat/month (reported only — page JS-rendered; held at $20 since 2023)", "billing_period": "monthly", "whats_gated": "Pro Search high daily volume, 10x citations, frontier models, file uploads, image gen, limited video", "limits": { "quota": "'high volume of daily searches' — no hard number published", "unlimited_definition": "'Best' mode is quota-free; advanced-model access 'may be limited during weeks of especially heavy usage'", "rate_limit": "", "throttle_behavior": "soft throttle on advanced models under heavy usage" } },
+        { "name": "Max", "price_usd": 200, "billing_unit": "flat/month or $2,000/yr (annual via web app only)", "billing_period": "monthly", "whats_gated": "Highest model access, Comet Max Assistant with highest weekly browser-agent query limit, Brain memory (free during Research Preview), priority support", "limits": { "quota": "highest weekly limit on browser agent queries", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "soft" } },
+        { "name": "Enterprise", "price_usd": 40, "billing_unit": "per seat/month (reported; Enterprise Max also exists)", "billing_period": "monthly", "whats_gated": "Org features", "limits": null }
+      ],
+      "usage_meters": [],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "Merchant Program: free, no fees/commissions, merchants remain merchant of record (PayPal Instant Buy partnership Nov 2025, 5,000+ merchants)" },
+      "sources": [
+        { "url": "https://www.perplexity.ai/help-center/en/articles/11680686-perplexity-max.html", "accessed": "2026-07-22", "note": "Primary: Max pricing and features" },
+        { "url": "https://newsroom.paypal-corp.com/2025-11-PayPal-and-Perplexity-Launch-Instant-Buy", "accessed": "2026-07-22", "note": "Primary PR: commerce mechanics" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

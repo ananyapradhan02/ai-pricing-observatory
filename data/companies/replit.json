@@ -1,0 +1,69 @@
+{
+  "company": "Replit",
+  "slug": "replit",
+  "website": "https://replit.com",
+  "category": "coding_agent",
+  "hq_country": "US",
+  "notes": "The effort-based-pricing case study: variable per-checkpoint pricing where failed/looping agent runs still bill — the dataset's clearest failed-actions-consume-credits example.",
+  "change_events": [
+    {
+      "date": "2025-06-18",
+      "change_type": "meter_change",
+      "description": "'Effort-Based Pricing' replaced flat $0.25/checkpoint — simple tasks under $0.25, complex tasks bundled into one variable-priced checkpoint. Applied to existing subscribers July 1, 2025.",
+      "announced": true,
+      "notice_period": "~2 weeks for existing subscribers",
+      "grandfathering": "none",
+      "user_reaction": "Initial acceptance; complaints grew with Agent 3",
+      "sources": [ { "url": "https://replit.com/blog/effort-based-pricing", "accessed": "2026-07-22", "note": "Primary announcement" } ]
+    },
+    {
+      "date": "2025-09-10",
+      "change_type": "other",
+      "description": "Agent 3 launch triggered cost-unpredictability backlash: users reported ~$1,000/week vs prior $180–200/month, single prompts costing $20, no pre-run estimate, and billing for failed/looping runs. Replit's FAQ disclaims the agent is 'probabilistic... may occasionally make mistakes.'",
+      "announced": true,
+      "notice_period": "n/a — product launch with existing meter",
+      "grandfathering": "n/a",
+      "user_reaction": "Documented backlash (The Register, InfoWorld)",
+      "sources": [
+        { "url": "https://www.theregister.com/2025/09/18/replit_agent3_pricing/", "accessed": "2026-07-22", "note": "Backlash coverage" },
+        { "url": "https://www.infoworld.com/article/4059876/replit-update-sparks-developers-dissatisfaction-over-pricing.html", "accessed": "2026-07-22", "note": "Backlash coverage" }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["hybrid", "usage", "credit"],
+      "free_tier": true,
+      "trial": "free Starter tier, limited daily Agent credits",
+      "plans": [
+        { "name": "Starter", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Limited daily Agent credits, 1 published project", "limits": null },
+        { "name": "Core", "price_usd": 25, "billing_unit": "flat/month ($20 annual) incl. $25/mo credits", "billing_period": "monthly", "whats_gated": "$25 monthly credits, 5 collaborators, 2 parallel agents", "limits": { "quota": "$25/mo credit allotment", "unlimited_definition": "", "rate_limit": "2 parallel agents", "throttle_behavior": "overage billed to card; user-set budget limits can suspend apps" } },
+        { "name": "Pro", "price_usd": 100, "billing_unit": "flat/month ($95 annual) incl. $100/mo credits", "billing_period": "monthly", "whats_gated": "Replaced retired Teams ($40/user reported): pooled credits, 15 collaborators, 10 parallel agents, most powerful models, 28-day DB rollbacks", "limits": { "quota": "$100/mo credit allotment", "unlimited_definition": "", "rate_limit": "10 parallel agents", "throttle_behavior": "overage billed in arrears; invoice thresholds $50–$250" } }
+      ],
+      "usage_meters": [
+        { "meter": "agent checkpoints (effort-based)", "rate": "variable by computational effort; formerly flat $0.25/checkpoint", "overage_behavior": "billed to card past credit allotment; budget limits can suspend apps" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Dollar-denominated credits covering Agent, deployments, database, transfer",
+        "credit_to_compute_mapping": "Opaque per task — effort-based checkpoint price not estimable before a run (core user complaint)",
+        "failed_actions_consume_credits": true,
+        "expiry": "Core: monthly reset, no rollover; Pro: 1-month rollover",
+        "purchase_mechanics": "subscription allotment + arrears overage"
+      },
+      "predictability": {
+        "spend_caps_available": true,
+        "usage_alerts_available": true,
+        "refund_on_failure_policy": "none — failed/looping runs bill (FAQ disclaims probabilistic mistakes)"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "SSO/SAML, VPC peering, single-tenant" },
+      "sources": [
+        { "url": "https://replit.com/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" },
+        { "url": "https://docs.replit.com/category/billing", "accessed": "2026-07-22", "note": "Primary billing docs: credits, rollover, thresholds" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "company": "Lovable",
+  "slug": "lovable",
+  "website": "https://lovable.dev",
+  "category": "coding_agent",
+  "hq_country": "SE",
+  "notes": "Fractional complexity-based credits (a message can cost 0.5 or 2.0 credits) with sliding-scale plan pricing per workspace, not per seat. Failed/unwanted generations consume credits, no refunds.",
+  "change_events": [
+    {
+      "date": "2025-06-30",
+      "change_type": "meter_change",
+      "description": "Shift from flat message counts to fractional complexity-based credits with daily credits and rollover (iterative rollout through 2025; exact date approximated to mid-2025 — reported only, docs changelog). Original late-2024 launch was $20/mo near-unlimited messaging, then message counts, then credits.",
+      "announced": true,
+      "notice_period": "iterative/rolling",
+      "grandfathering": "unknown",
+      "user_reaction": "Modest recurring complaints about credit burn on errors; no single backlash event",
+      "sources": [ { "url": "https://www.eesel.ai/blog/lovable-pricing", "accessed": "2026-07-22", "note": "Reported repricing history; verify against docs.lovable.dev/changelog" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["credit", "hybrid"],
+      "free_tier": true,
+      "trial": "free tier: 5 daily credits (max 30/mo)",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "5 daily credits (max 30/mo), unlimited workspace members, private projects", "limits": { "quota": "30 credits/month", "unlimited_definition": "unlimited members — metering is per workspace credits", "rate_limit": "", "throttle_behavior": "hard stop until top-up/upgrade" } },
+        { "name": "Pro (sliding scale)", "price_usd": 25, "billing_unit": "per 100 credits/month, scaling to 10,000 credits at $2,250/mo (~16% annual discount)", "billing_period": "monthly", "whats_gated": "Custom domains, badge removal, Code mode, roles/permissions, daily credits up to 150/mo", "limits": { "quota": "purchased credit tier", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "hard stop; top-ups $15/50 credits (max 1,000, valid 12 months)" } },
+        { "name": "Business (sliding scale)", "price_usd": 50, "billing_unit": "per 100 credits/month (2x Pro per-credit price), to 10,000 at $4,300/mo", "billing_period": "monthly", "whats_gated": "SSO, restricted projects, data-training opt-out, per-user credit limits", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "credits (fractional, complexity-based per message)", "rate": "simple edit ~0.5 credits; landing page ~1.7–2.0 credits", "overage_behavior": "hard stop until top-up (Pro $15/50, Business $30/50) or upgrade" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Fractional credits deducted per message by task complexity",
+        "credit_to_compute_mapping": "Partially transparent: examples published, exact formula not",
+        "failed_actions_consume_credits": true,
+        "expiry": "Monthly credits roll over 1 month (monthly plans) or remainder of term (annual); daily credits never roll; all expire on cancellation; top-ups valid 12 months",
+        "purchase_mechanics": "subscription allotment + 50-credit top-up increments"
+      },
+      "predictability": {
+        "spend_caps_available": true,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none — failed/unwanted generations consume credits; refunds not offered (documented in docs)"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://lovable.dev/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" },
+        { "url": "https://docs.lovable.dev/introduction/plans-and-credits", "accessed": "2026-07-22", "note": "Primary credit mechanics docs" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

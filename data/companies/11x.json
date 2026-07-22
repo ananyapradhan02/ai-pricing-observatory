@@ -1,0 +1,50 @@
+{
+  "company": "11x (Alice)",
+  "slug": "11x",
+  "website": "https://www.11x.ai",
+  "category": "sales_agent",
+  "hq_country": "US",
+  "notes": "Rare published pricing in the AI-SDR category — apparently part of the post-scandal reset after the March 2025 TechCrunch investigation (unauthorized customer logos, 'contracted ARR' counting trials, ~70–80% churn; CEO stepped down May 2025). THREE conflicting prices on their own page: card $3,750/mo, FAQ '$36,000/yr' ($3,000/mo), meta description 'from $2,000/mo' — all recorded. Meter is per prospect, not per send.",
+  "change_events": [
+    {
+      "date": "2025-09-01",
+      "change_type": "other",
+      "description": "Published a public rate card (Growth 'starting at $3,750/mo, billed annually') — unusual for the category and apparently part of the post-controversy transparency reset (date approximated; reported).",
+      "announced": true,
+      "notice_period": "n/a",
+      "grandfathering": "renewal increases capped (per page)",
+      "user_reaction": "",
+      "sources": [ { "url": "https://www.11x.ai/products/alice/pricing", "accessed": "2026-07-22", "note": "Primary pricing page" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["usage", "hybrid"],
+      "free_tier": false,
+      "trial": "none — annual default, 2–3-year commitments with discounts",
+      "plans": [
+        { "name": "Growth", "price_usd": 3750, "billing_unit": "per month, billed annually (page conflict: FAQ says $36,000/yr = $3,000/mo; meta says 'from $2,000/mo' — all three recorded)", "billing_period": "annual", "whats_gated": "Up to 5 end users, 2,000 new prospects/mo, managed Gmail mailboxes, CRM sync", "limits": { "quota": "2,000 new prospects/month", "unlimited_definition": "price fixed regardless of touchpoints per prospect ('three touchpoints or thirty')", "rate_limit": "", "throttle_behavior": "tier upgrade" } },
+        { "name": "Pro", "price_usd": null, "billing_unit": "custom", "billing_period": "annual", "whats_gated": "10 users, 5,000 prospects/mo, 105+ languages", "limits": null },
+        { "name": "Enterprise", "price_usd": null, "billing_unit": "custom", "billing_period": "annual", "whats_gated": "10,000+ prospects/mo, SSO, custom DPA/SLA, dedicated CSM + forward-deployed engineer", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "new prospects per month (not sends)", "rate": "bundled per tier; reported actuals: Vendr median ~$40,125/yr, range $38,250–$65,550", "overage_behavior": "tier upgrade" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented; renewal increases capped"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "reported first-year totals $50–60k", "platform_fee": "no setup fee (per page)" },
+      "sources": [
+        { "url": "https://www.11x.ai/products/alice/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched — internal price conflicts recorded" },
+        { "url": "https://techcrunch.com/2025/03/24/a16z-and-benchmark-backed-11x-has-been-claiming-customers-it-doesnt-have", "accessed": "2026-07-22", "note": "Context: March 2025 investigation" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "company": "Lindy",
+  "slug": "lindy",
+  "website": "https://www.lindy.ai",
+  "category": "agent_platform",
+  "hq_country": "US",
+  "notes": "Case study in meter OBSCURING: early 2026 relaunch removed credit numbers from public tiers entirely — usage now marketed as multiples ('3x Plus usage') with 'the exact metric is not advertised.' Legacy credit definition: 1 credit ≈ one task/action; simple ~1, medium 2–5, complex/premium-model 10+.",
+  "change_events": [
+    {
+      "date": "2026-02-15",
+      "change_type": "plan_restructure",
+      "description": "Free tier (400 credits/mo) discontinued; credit numbers dropped from public tiers; relaunched as Plus/Pro/Max assistant plans with vague usage multiples (date approximated within Jan–Mar 2026 window; reported only). Prior: Pro $49.99 ≈ 5,000 credits, Business $299 ≈ 30,000 credits.",
+      "announced": false,
+      "notice_period": "unknown",
+      "grandfathering": "unknown",
+      "user_reaction": "Third-party guides flagged the opacity increase",
+      "sources": [ { "url": "https://www.usecarly.com/blog/lindy-ai-pricing/", "accessed": "2026-07-22", "note": "Reported restructure history" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["flat", "hybrid"],
+      "free_tier": false,
+      "trial": "7-day free trial, no credit card; no free tier",
+      "plans": [
+        { "name": "Plus", "price_usd": 49.99, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Standard usage, 2 inboxes", "limits": { "quota": "'standard usage' — exact metric deliberately not advertised", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "undocumented" } },
+        { "name": "Pro", "price_usd": 99.99, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "3x Plus usage, 3 inboxes, computer use", "limits": { "quota": "3x Plus (absolute number unpublished)", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "undocumented" } },
+        { "name": "Max", "price_usd": 199.99, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "7x Plus usage, 5 inboxes", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "tasks/actions (legacy credits, now unpublished)", "rate": "legacy: simple ~1 credit, medium 2–5, complex/premium 10+ (reported)", "overage_behavior": "undocumented publicly" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Legacy: 1 credit ≈ one task/action",
+        "credit_to_compute_mapping": "Now opaque by design — removed from public marketing in 2026",
+        "failed_actions_consume_credits": null,
+        "expiry": "unpublished",
+        "purchase_mechanics": "subscription tiers with usage multiples"
+      },
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "SSO, SCIM, HIPAA/BAA, audit logs" },
+      "sources": [
+        { "url": "https://www.lindy.ai/pricing", "accessed": "2026-07-22", "note": "Primary pricing page (updated 2026-05-04), fetched" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

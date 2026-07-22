@@ -1,0 +1,60 @@
+{
+  "company": "Cognition (Devin + Windsurf)",
+  "slug": "cognition-devin",
+  "website": "https://devin.ai",
+  "category": "coding_agent",
+  "hq_country": "US",
+  "notes": "Covers the merged Devin + Windsurf pricing (windsurf.com/pricing now redirects to devin.ai/pricing after Cognition's July 2025 acquisition). Notable arc: $500/mo minimum → $20 entry (96% cut) → credits retired for daily/weekly quotas. Legacy ACU unit: 1 ACU ≈ 15 min of active agent work (reported).",
+  "change_events": [
+    {
+      "date": "2025-04-03",
+      "change_type": "price_decrease",
+      "description": "Devin 2.0: entry price dropped from $500/mo minimum (Team: 250 ACUs) to a $20 pay-as-you-go Core plan — a ~96% entry-price cut, widely covered as opening the coding-agent price war.",
+      "announced": true,
+      "notice_period": "immediate",
+      "grandfathering": "n/a (downward)",
+      "user_reaction": "Positive; framed as commoditization signal",
+      "sources": [ { "url": "https://agentmarketcap.ai/blog/2026/04/07/coding-agent-pricing-wars-devin-commodity", "accessed": "2026-07-22", "note": "Coverage of the cut" } ]
+    },
+    {
+      "date": "2026-03-19",
+      "change_type": "plan_restructure",
+      "description": "Post-Windsurf merge: credit system retired entirely in favor of daily/weekly usage quotas; Windsurf Pro $15→$20; $200 Max tier added; Windsurf pricing merged into unified Devin plans (date reported only; corroborated by live redirect of windsurf.com/pricing).",
+      "announced": true,
+      "notice_period": "unknown",
+      "grandfathering": "no published details",
+      "user_reaction": "Mild complaints on the $15→$20 rise; minor vs acquisition drama",
+      "sources": [ { "url": "https://www.nocode.mba/articles/windsurf-pricing", "accessed": "2026-07-22", "note": "Reported; verify against Cognition blog" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["hybrid", "usage", "seat"],
+      "free_tier": true,
+      "trial": "free tier: light agent quota, unlimited Tab/inline edits",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Light agent quota, limited models, unlimited Tab/inline edits (ex-Windsurf features)", "limits": { "quota": "light daily quota", "unlimited_definition": "unlimited applies to Tab completions/inline edits only", "rate_limit": "", "throttle_behavior": "wait for refresh" } },
+        { "name": "Pro", "price_usd": 20, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Full model access incl. frontier models, free SWE-1.7 use, Devin Cloud, up to 10 concurrent sessions", "limits": { "quota": "usage allowances refreshing daily and weekly; per-message cost varies by model/task/reasoning", "unlimited_definition": "", "rate_limit": "10 concurrent sessions", "throttle_behavior": "overage purchased at API pricing; FAQ advises smaller models to stretch quota" } },
+        { "name": "Max", "price_usd": 200, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Significantly higher quotas, unlimited concurrent sessions", "limits": { "quota": "higher daily/weekly allowances", "unlimited_definition": "unlimited concurrency, not unlimited usage", "rate_limit": "", "throttle_behavior": "overage at API pricing" } },
+        { "name": "Teams", "price_usd": 80, "billing_unit": "flat/month base + $40/mo per full dev seat", "billing_period": "monthly", "whats_gated": "Unlimited flex members, admin dashboard", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "model usage within daily/weekly quotas", "rate": "varies by model/task size/reasoning; overage at API pricing", "overage_behavior": "purchase at API rates" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "SAML/OIDC, VPC deploy, dedicated support" },
+      "sources": [
+        { "url": "https://devin.ai/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched; windsurf.com/pricing redirects here" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

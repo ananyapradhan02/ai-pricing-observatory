@@ -1,0 +1,57 @@
+{
+  "company": "Runway",
+  "slug": "runway",
+  "website": "https://runwayml.com",
+  "category": "creative_ai",
+  "hq_country": "US",
+  "notes": "Publishes exact per-model credit rates on the pricing page (rare transparency) and has a documented partial failed-generation policy: credits auto-refund on generation ERRORS, but completed-but-bad outputs are not refunded. Old 'Unlimited' plan ($76, throttled Explore Mode) retired for credit-only Max.",
+  "change_events": [
+    {
+      "date": "2025-11-01",
+      "change_type": "plan_restructure",
+      "description": "'Unlimited' plan ($76/mo: 2,250 credits + unlimited throttled Explore Mode) retired, replaced by credit-only Max (9,500 credits, no Explore Mode) — an 'unlimited'-to-metered conversion. Date approximated 2025/26; reported only.",
+      "announced": true,
+      "notice_period": "unknown",
+      "grandfathering": "unknown",
+      "user_reaction": "Complaints from heavy Explore Mode users (reported)",
+      "sources": [ { "url": "https://www.eesel.ai/blog/runway-ai-pricing", "accessed": "2026-07-22", "note": "Reported transition history" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["credit", "hybrid"],
+      "free_tier": true,
+      "trial": "free tier: 125 one-time credits, never expire",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat", "billing_period": "monthly", "whats_gated": "125 one-time credits, watermarked", "limits": null },
+        { "name": "Standard", "price_usd": 15, "billing_unit": "flat/month ($12 annual), 625 credits/mo", "billing_period": "monthly", "whats_gated": "Watermark removal, all models", "limits": { "quota": "625 credits/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "top-up (min 1,000 credits, never expire)" } },
+        { "name": "Pro", "price_usd": 35, "billing_unit": "flat/month ($28 annual), 2,250 credits/mo", "billing_period": "monthly", "whats_gated": "Custom voices, higher limits", "limits": null },
+        { "name": "Max", "price_usd": 95, "billing_unit": "flat/month ($76 annual), 9,500 credits/mo", "billing_period": "monthly", "whats_gated": "Highest allotment, 4K/Topaz upscale, replaced old Unlimited plan", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "credits per generation (per-model rates published)", "rate": "Gen-4.5: 12 credits/sec (60/5s video); Aleph 2.0: 140/5s; Seedance 2.0 Pro: 160/4s; Gen-4 Image: 8/image; TTS: 1 credit/50 chars", "overage_behavior": "top-ups (min 1,000, never expire)" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Credits consumed per generation at published per-model, per-second/image rates",
+        "credit_to_compute_mapping": "Fully published on pricing page — highest transparency tier in dataset",
+        "failed_actions_consume_credits": false,
+        "expiry": "Standard/Pro: reset each cycle, no rollover; Max: 1-month rollover; purchased top-ups never expire",
+        "purchase_mechanics": "subscription allotment + top-ups"
+      },
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "auto-refund on generation errors only; completed-but-unwanted outputs not refunded (documented)"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "SSO, analytics, teamspaces" },
+      "sources": [
+        { "url": "https://runwayml.com/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" },
+        { "url": "https://help.runwayml.com/hc/en-us/articles/34266159290003", "accessed": "2026-07-22", "note": "Primary: failed-generation refund policy" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "company": "Decagon",
+  "slug": "decagon",
+  "website": "https://decagon.ai",
+  "category": "support_agent",
+  "hq_country": "US",
+  "notes": "custom_only — no public rate card; sales-led. Key primary source is Decagon's own Dec 2024 pricing blog documenting the per-conversation vs per-resolution menu, with the striking admission that most customers choose per-conversation because outcome definitions cause disputes ('arguing over what a resolution is'). Reported deal economics: ~$50k platform fee, ACVs ~$95k–$590k, median ~$400k (all reported-only).",
+  "change_events": [
+    {
+      "date": "2024-12-10",
+      "change_type": "other",
+      "description": "Publicly formalized the dual pricing menu: (a) per-conversation — fixed rate per incoming conversation with volume discounts; (b) per-resolution — higher rate, no charge for escalations, commitments lower the rate. Majority of customers reported choosing per-conversation.",
+      "announced": true,
+      "notice_period": "n/a",
+      "grandfathering": "n/a",
+      "user_reaction": "",
+      "sources": [ { "url": "https://decagon.ai/blog/pricing-ai-agents", "accessed": "2026-07-22", "note": "Primary: Decagon's own pricing blog (Bihan Jiang)" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "reported",
+      "pricing_models": ["custom_only", "usage", "outcome"],
+      "free_tier": false,
+      "trial": "demo-gated",
+      "plans": [
+        { "name": "Custom (per-conversation)", "price_usd": null, "billing_unit": "per conversation (reported ~$0.99 at standard volumes)", "billing_period": "custom", "whats_gated": "Volume discounts; majority choice", "limits": null },
+        { "name": "Custom (per-resolution)", "price_usd": null, "billing_unit": "per resolution (reported ~$0.50–higher negotiated)", "billing_period": "custom", "whats_gated": "No charge for escalations; commitments lower rate", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "conversations or resolutions (customer's choice)", "rate": "reported ~$0.99/conversation; resolution rates negotiated", "overage_behavior": "contract terms" }
+      ],
+      "outcome_pricing": {
+        "outcome_definition": "Fully resolved conversation without escalation (offered but minority-chosen; vendor itself flags definition disputes)",
+        "price": "negotiated (reported $0.50+)",
+        "guarantee": "no charge for escalations under per-resolution"
+      },
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "escalations free under per-resolution model"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "~$50k/yr platform fee before usage (reported); ACVs reported $95k–$590k, median ~$400k", "platform_fee": "reported ~$50k annual" },
+      "sources": [
+        { "url": "https://decagon.ai/blog/pricing-ai-agents", "accessed": "2026-07-22", "note": "Primary: pricing model mechanics" },
+        { "url": "https://www.eesel.ai/blog/decagon-pricing", "accessed": "2026-07-22", "note": "Reported price points and platform fee" }
+      ],
+      "change_note": "Initial snapshot — custom_only vendor; all dollar figures reported"
+    }
+  ]
+}

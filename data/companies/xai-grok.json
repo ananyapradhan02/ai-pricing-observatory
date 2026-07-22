@@ -1,0 +1,60 @@
+{
+  "company": "xAI (Grok / SuperGrok)",
+  "slug": "xai-grok",
+  "website": "https://grok.com",
+  "category": "foundation_lab",
+  "hq_country": "US",
+  "notes": "Time-windowed prompt quotas (rolling 2-hour windows), no credits, no consumer PAYG. Unique bundling entanglement with X Premium tiers. grok.com/plans is JS-only — ALL prices reported-only; flagged for browser verification. Staged model rollouts by tier (Grok 4.5 to Heavy first) act as a de facto access gate.",
+  "change_events": [
+    {
+      "date": "2025-07-09",
+      "change_type": "plan_added",
+      "description": "SuperGrok Heavy launched at $300/mo — multi-agent Grok 4 Heavy, top-tier limits; at the time the most expensive consumer AI subscription.",
+      "announced": true,
+      "notice_period": "immediate",
+      "grandfathering": "n/a",
+      "user_reaction": "Sticker-shock commentary",
+      "sources": [ { "url": "https://felloai.com/grok-pricing/", "accessed": "2026-07-22", "note": "Reported tier history" } ]
+    },
+    {
+      "date": "2026-03-19",
+      "change_type": "limits_change",
+      "description": "Free tier lost all Imagine image/video generation — a quiet removal; SuperGrok Lite ($10/mo) launched days later (Mar 25) as the new entry point for generation features.",
+      "announced": false,
+      "notice_period": "none",
+      "grandfathering": "none",
+      "user_reaction": "User complaints about the silent removal",
+      "sources": [ { "url": "https://piunikaweb.com/2026/03/25/elon-musk-supergrok-lite-post/", "accessed": "2026-07-22", "note": "Reported (Lite launch context)" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "reported",
+      "pricing_models": ["seat"],
+      "free_tier": true,
+      "trial": "free tier (~10 prompts/2hr, Grok 4 Mini; no generation features since Mar 2026)",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "~10 prompts per 2-hour window, Grok 4 Mini only", "limits": { "quota": "~10 prompts/2hr rolling window (reported)", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "wait for window reset; no PAYG" } },
+        { "name": "SuperGrok Lite", "price_usd": 10, "billing_unit": "flat/month (reported; launched Mar 25, 2026)", "billing_period": "monthly", "whats_gated": "480p/6s Imagine video, 1 agent", "limits": null },
+        { "name": "SuperGrok", "price_usd": 30, "billing_unit": "flat/month or $300/yr (reported)", "billing_period": "monthly", "whats_gated": "~100 prompts/2hr, DeepSearch, Big Brain, Voice, unlimited Imagine images, ~100 video renders/day", "limits": { "quota": "~100 prompts/2hr; ~100 video renders/day (reported)", "unlimited_definition": "'unlimited' Imagine images within daily render caps", "rate_limit": "", "throttle_behavior": "window reset waits" } },
+        { "name": "X Premium+", "price_usd": 40, "billing_unit": "flat/month (reported; bundles SuperGrok-level access + X perks)", "billing_period": "monthly", "whats_gated": "SuperGrok access inside X subscription", "limits": null },
+        { "name": "SuperGrok Heavy", "price_usd": 300, "billing_unit": "flat/month (reported)", "billing_period": "monthly", "whats_gated": "Grok 4 Heavy multi-agent; only tier with full Grok 4.5 access today; max limits", "limits": null }
+      ],
+      "usage_meters": [],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": false, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://felloai.com/grok-pricing/", "accessed": "2026-07-22", "note": "Reported — grok.com/plans is JS-only; flagged for browser verification" },
+        { "url": "https://www.ai-toolbox.co/grok-models/grok-pricing-plans-api-2026", "accessed": "2026-07-22", "note": "Reported tier detail" }
+      ],
+      "change_note": "Initial snapshot — all prices reported-only"
+    }
+  ]
+}

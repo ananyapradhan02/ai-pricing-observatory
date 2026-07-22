@@ -1,0 +1,81 @@
+{
+  "company": "GitHub Copilot",
+  "slug": "github-copilot",
+  "website": "https://github.com/features/copilot",
+  "category": "coding_agent",
+  "hq_country": "US",
+  "notes": "Three-stage meter evolution in 14 months: flat plans → premium request units (2025) → token-based AI Credits (June 2026). Grandfathering with silently increased model multipliers is a notable partial-degradation pattern.",
+  "change_events": [
+    {
+      "date": "2025-06-18",
+      "change_type": "meter_change",
+      "description": "Premium-request billing enforcement began (system announced April 2025 with Pro+): allowances per plan (reported: Pro 300/mo, Pro+ 1,500, Business 300/user, Enterprise 1,000/user), overage $0.04/request, per-model multipliers.",
+      "announced": true,
+      "notice_period": "~2 months from announcement",
+      "grandfathering": "none",
+      "user_reaction": "Grumbling over multipliers; moderate",
+      "sources": [ { "url": "https://docs.github.com/en/copilot/concepts/billing/copilot-requests", "accessed": "2026-07-22", "note": "Legacy reference doc (live)" } ]
+    },
+    {
+      "date": "2026-04-22",
+      "change_type": "limits_change",
+      "description": "Unannounced-in-advance tightening of Individual plan limits and pause on self-serve Business signups.",
+      "announced": false,
+      "notice_period": "none",
+      "grandfathering": "unknown",
+      "user_reaction": "Community discussion backlash (#192963)",
+      "sources": [ { "url": "https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/", "accessed": "2026-07-22", "note": "Primary post (after the fact)" } ]
+    },
+    {
+      "date": "2026-06-01",
+      "change_type": "credit_conversion",
+      "description": "Premium request units replaced by GitHub AI Credits consumed by token usage (input+output+cached) at published per-model API rates; completions/Next Edit exempt; model fallback removed. Announced April 27, 2026. Annual Pro/Pro+ subscribers keep premium-request pricing until expiry BUT with increased model multipliers from June 1 — partial silent degradation of grandfathered terms.",
+      "announced": true,
+      "notice_period": "~5 weeks",
+      "grandfathering": "partial — legacy pricing retained for annual subs with worsened multipliers",
+      "user_reaction": "Documented backlash: 'you will get less, but pay the same price'",
+      "sources": [
+        { "url": "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/", "accessed": "2026-07-22", "note": "Primary announcement" },
+        { "url": "https://visualstudiomagazine.com/articles/2026/04/27/devs-sound-off-on-usage-based-copilot-pricing-change-you-will-get-less-but-pay-the-same-price.aspx", "accessed": "2026-07-22", "note": "Backlash coverage" }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["hybrid", "usage", "seat"],
+      "free_tier": true,
+      "trial": "free tier (2,000 completions/mo, auto model selection only); students free",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "2,000 completions + limited use/mo, auto model selection only", "limits": null },
+        { "name": "Pro", "price_usd": 10, "billing_unit": "flat/month incl. $10 AI Credits", "billing_period": "monthly", "whats_gated": "$10 monthly AI Credits at per-model token rates", "limits": { "quota": "$10 credit allotment", "unlimited_definition": "completions and Next Edit don't consume credits", "rate_limit": "", "throttle_behavior": "no model fallback; overage purchasable; admin budgets" } },
+        { "name": "Pro+", "price_usd": 39, "billing_unit": "flat/month incl. $39 AI Credits", "billing_period": "monthly", "whats_gated": "Premium models, higher allotment", "limits": null },
+        { "name": "Max", "price_usd": 100, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Highest individual credit allotment (new tier)", "limits": null },
+        { "name": "Business", "price_usd": 19, "billing_unit": "per seat/month incl. $19 credits/user (pooled)", "billing_period": "monthly", "whats_gated": "Org management, pooled credits", "limits": null },
+        { "name": "Enterprise", "price_usd": 39, "billing_unit": "per seat/month incl. $39 credits/user", "billing_period": "monthly", "whats_gated": "Enterprise controls, cost-center budgets", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "AI Credits (token usage: input+output+cached)", "rate": "published per-model API rates", "overage_behavior": "overage purchasable; admin budgets at enterprise/cost-center/user level" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Dollar-denominated AI Credits drawn down by token usage per model",
+        "credit_to_compute_mapping": "Published per-model rates — transparent in dollars, variable per request",
+        "failed_actions_consume_credits": null,
+        "expiry": "monthly allotment",
+        "purchase_mechanics": "subscription allotment + overage purchase"
+      },
+      "predictability": {
+        "spend_caps_available": true,
+        "usage_alerts_available": true,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": false, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://docs.github.com/en/copilot/get-started/plans", "accessed": "2026-07-22", "note": "Primary plans doc, fetched" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "company": "Zapier (AI / Agents)",
+  "slug": "zapier",
+  "website": "https://zapier.com",
+  "category": "agent_platform",
+  "hq_country": "US",
+  "notes": "Unified task-metering across automation and AI (AI steps, Code, MCP, SDK share one task pool; MCP call = 2 tasks). 2026 saw two same-quarter repricings: AI steps by model tier (June 15) and raised pay-per-task overage rates (July 15).",
+  "change_events": [
+    {
+      "date": "2026-06-15",
+      "change_type": "meter_change",
+      "description": "AI by Zapier steps repriced by model tier: Standard 1x, Advanced 3x (default), Premium 5x tasks per run; tool calls billed additively.",
+      "announced": true,
+      "notice_period": "announced via help center in advance",
+      "grandfathering": "none",
+      "user_reaction": "",
+      "sources": [ { "url": "https://help.zapier.com/hc/en-us/articles/46597632373389", "accessed": "2026-07-22", "note": "Primary help article" } ]
+    },
+    {
+      "date": "2026-07-15",
+      "change_type": "price_increase",
+      "description": "Pay-per-task overage rates raised for monthly plans.",
+      "announced": true,
+      "notice_period": "~1 month",
+      "grandfathering": "monthly plans affected; annual unaffected until renewal",
+      "user_reaction": "",
+      "sources": [ { "url": "https://help.zapier.com/hc/en-us/articles/46597632373389", "accessed": "2026-07-22", "note": "Same primary article" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["usage", "hybrid", "seat"],
+      "free_tier": true,
+      "trial": "14-day Professional trial; free tier 100 tasks/mo",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "100 tasks/mo, 2-step Zaps", "limits": { "quota": "100 tasks/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "Zaps pause at limit" } },
+        { "name": "Professional", "price_usd": 19.99, "billing_unit": "from $19.99/month (task tiers 750/mo up to 2M; annual saves 33%)", "billing_period": "monthly", "whats_gated": "Multi-step Zaps, webhooks, premium apps", "limits": { "quota": "purchased task tier", "unlimited_definition": "triggers/filters/Tables/Forms/Formatter don't consume tasks", "rate_limit": "", "throttle_behavior": "automatic pay-per-task overage at higher rate (opt-out pauses Zaps)" } },
+        { "name": "Team", "price_usd": 69, "billing_unit": "from $69/month, 25 users", "billing_period": "monthly", "whats_gated": "Shared workspaces, SSO", "limits": null },
+        { "name": "Agents Pro (add-on)", "price_usd": 33.33, "billing_unit": "$400/yr — 1,500 agent activities/mo (Agents Free: 400/mo)", "billing_period": "annual", "whats_gated": "Agent activities: actions in behaviors/chat, web browsing, knowledge lookups", "limits": { "quota": "1,500 activities/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "upgrade or wait" } }
+      ],
+      "usage_meters": [
+        { "meter": "tasks (successful actions)", "rate": "bundled per tier; AI steps 1x/3x/5x by model tier; MCP call = 2 tasks", "overage_behavior": "automatic pay-per-task at higher rate (raised July 2026); opt-out pauses Zaps" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": true,
+        "usage_alerts_available": true,
+        "refund_on_failure_policy": "tasks counted on success ('successful actions')"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://zapier.com/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" },
+        { "url": "https://help.zapier.com/hc/en-us/articles/15279018245901", "accessed": "2026-07-22", "note": "Primary: overage mechanics" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

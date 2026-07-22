@@ -1,0 +1,41 @@
+{
+  "company": "Sierra",
+  "slug": "sierra",
+  "website": "https://sierra.ai",
+  "category": "support_agent",
+  "hq_country": "US",
+  "notes": "custom_only — no public pricing page despite being the industry's loudest outcome-pricing advocate (Bret Taylor: 'the whole market is going to go towards outcomes-based pricing'). Framing: human call costs $10–20, Sierra prices as a share of the saving. Contracts reportedly blend volume-based pricing for routine interactions with per-resolution for complex ones. $350M raise at $10B valuation (2025). All dollar figures reported-only, never confirmed by Sierra.",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "reported",
+      "pricing_models": ["custom_only", "outcome", "hybrid"],
+      "free_tier": false,
+      "trial": "demo-gated",
+      "plans": [
+        { "name": "Custom", "price_usd": null, "billing_unit": "per resolution (reported $1–$2.50), blended with volume-based components", "billing_period": "custom", "whats_gated": "Annual contracts reportedly ~$150k+ minimum; year-one totals $200k–$350k+ incl. implementation (up to ~$200k)", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "resolutions (+ volume components)", "rate": "reported $1–$2.50 per resolution", "overage_behavior": "contract terms" }
+      ],
+      "outcome_pricing": {
+        "outcome_definition": "Conversation resolved without human escalation; escalated/unresolved interactions generally carry no outcome fee",
+        "price": "reported $1–$2.50 per resolution",
+        "guarantee": "no fee on escalation (reported)"
+      },
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "no outcome fee on unresolved (by model design, reported)"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "~$150k+/yr (reported)", "platform_fee": "implementation reported up to ~$200k" },
+      "sources": [
+        { "url": "https://cheekypint.substack.com/p/bret-taylor-of-sierra-on-ai-agents", "accessed": "2026-07-22", "note": "Primary-adjacent: Taylor's own statements on outcome pricing" },
+        { "url": "https://www.lorikeetcx.ai/articles/sierra-ai-pricing-alternatives", "accessed": "2026-07-22", "note": "Reported price points" }
+      ],
+      "change_note": "Initial snapshot — custom_only; all figures reported"
+    }
+  ]
+}

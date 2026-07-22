@@ -1,0 +1,39 @@
+{
+  "company": "Vapi",
+  "slug": "vapi",
+  "website": "https://vapi.ai",
+  "category": "voice_ai",
+  "hq_country": "US",
+  "notes": "Pure orchestration-fee model: $0.05/min platform fee with STT/LLM/TTS/telephony passed through at provider cost ($0 with BYO keys). Real all-in cost reported ~$0.23–0.33/min. Compliance monetized as add-ons: HIPAA $2,000/mo, Zero Data Retention $1,000/mo. Core rate stable 2024–2026.",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["usage", "hybrid"],
+      "free_tier": true,
+      "trial": "'60+ minutes included' on Build; ~$10 free credit for new accounts (reported)",
+      "plans": [
+        { "name": "Build (PAYG)", "price_usd": null, "billing_unit": "$0.05/min of calls + $0.005/msg SMS/chat (platform fee only)", "billing_period": "usage", "whats_gated": "Self-serve; 10 concurrent lines included (+$10/line/mo beyond); call history 14 days, chat 30 days", "limits": { "quota": "pay-as-you-go", "unlimited_definition": "", "rate_limit": "10 concurrent lines included", "throttle_behavior": "+$10/line/mo for more concurrency" } },
+        { "name": "Scale", "price_usd": null, "billing_unit": "annual contract: fixed platform fee + committed volume, volume-based per-minute rates", "billing_period": "annual", "whats_gated": "SOC 2/HIPAA/PCI, SSO, RBAC, data residency, SLAs, dedicated team", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "call minutes (orchestration only)", "rate": "$0.05/min platform fee; STT/LLM/TTS/telephony passthrough at provider cost ($0 with BYO API keys); all-in commonly ~$0.23–0.33/min (reported)", "overage_behavior": "pure PAYG" },
+        { "meter": "messages (SMS/chat)", "rate": "$0.005/message", "overage_behavior": "PAYG" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "HIPAA add-on $2,000/mo; Zero Data Retention $1,000/mo (both tiers)" },
+      "sources": [
+        { "url": "https://vapi.ai/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" },
+        { "url": "https://telnyx.com/resources/vapi-pricing", "accessed": "2026-07-22", "note": "Reported all-in cost estimates" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

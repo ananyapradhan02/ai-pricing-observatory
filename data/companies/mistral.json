@@ -1,0 +1,38 @@
+{
+  "company": "Mistral (Le Chat / Vibe)",
+  "slug": "mistral",
+  "website": "https://mistral.ai/pricing",
+  "category": "foundation_lab",
+  "hq_country": "FR",
+  "notes": "Product rebranded Le Chat → 'Mistral Vibe' (visible on primary page). Multiplier-based quotas ('up to 6x free') rather than absolute numbers — one published hard number: Flash answers 150/day Pro vs 200/day Team. Price stable since Feb 2025 launch.",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["seat", "hybrid"],
+      "free_tier": true,
+      "trial": "free tier; Student $5.99/mo (12-month cap, verified students, new users only)",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Limited messages/searches, 5 scheduled tasks", "limits": null },
+        { "name": "Pro", "price_usd": 14.99, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Up to 6x messages, 5x searches, 40x image gen, 15GB libraries, all-day coding CLI/IDE, training opt-out", "limits": { "quota": "multiplier-based ('up to 6x free'); Flash answers 150/day", "unlimited_definition": "'unlimited' scheduled tasks subject to fair-usage ToS", "rate_limit": "", "throttle_behavior": "extend usage with PAYG credits at API rate" } },
+        { "name": "Team", "price_usd": 24.99, "billing_unit": "per user/month", "billing_period": "monthly", "whats_gated": "30GB/user, domain verification, data export; Flash answers 200/day", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "PAYG overage credits", "rate": "API rates past plan limits", "overage_behavior": "opt-in extension" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "SSO, audit logs, white label" },
+      "sources": [
+        { "url": "https://mistral.ai/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

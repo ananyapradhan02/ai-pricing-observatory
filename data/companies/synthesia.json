@@ -1,0 +1,45 @@
+{
+  "company": "Synthesia",
+  "slug": "synthesia",
+  "website": "https://www.synthesia.io",
+  "category": "creative_ai",
+  "hq_country": "GB",
+  "notes": "Minutes-based metering deducted by the second ('a 59-second video leaves 9:01 of your 10 minutes') with a secondary credits layer for specific features (b-roll avatar actions 96 credits each; lip-synced dubbing 2x credits). Notably stable pricing — no documented 2024–2026 headline change found.",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["hybrid", "usage"],
+      "free_tier": true,
+      "trial": "free tier: 10 min/mo",
+      "plans": [
+        { "name": "Basic (Free)", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "10 video minutes/mo", "limits": { "quota": "10 minutes/month, deducted by the second", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "hard stop" } },
+        { "name": "Starter", "price_usd": 29, "billing_unit": "flat/month ($18/mo annual — pooled 120 min/yr)", "billing_period": "monthly", "whats_gated": "10 min/mo (monthly) or 120 min/yr (annual), 1 editor + 3 guests", "limits": { "quota": "10 min/mo or 120 min/yr pooled", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "no published self-serve overage" } },
+        { "name": "Creator", "price_usd": 89, "billing_unit": "flat/month ($64/mo annual — pooled 360 min/yr)", "billing_period": "monthly", "whats_gated": "30 min/mo or 360 min/yr, more avatars, +5 guests", "limits": null },
+        { "name": "Enterprise", "price_usd": null, "billing_unit": "custom", "billing_period": "custom", "whats_gated": "Unlimited minutes, full avatar library, SAML/SSO; custom avatar add-on $1,000/yr (Studio Express-1, annual plans)", "limits": { "quota": "unlimited minutes", "unlimited_definition": "'unlimited' at enterprise contract terms", "rate_limit": "", "throttle_behavior": "extra usage as paid add-on" } }
+      ],
+      "usage_meters": [
+        { "meter": "video minutes (deducted by the second); dubbing metered identically", "rate": "bundled per tier; ~120 credits = 1 minute (reported); b-roll avatar actions 96 credits each; lip-synced dubbing 2x credits", "overage_behavior": "no published self-serve overage; enterprise add-on" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Secondary credits layer for specific features (avatar actions, dubbing multipliers)",
+        "credit_to_compute_mapping": "Partially published; ~120 credits/minute conversion reported only",
+        "failed_actions_consume_credits": null,
+        "expiry": "annual credits expire yearly (reported)",
+        "purchase_mechanics": "bundled with plan"
+      },
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://www.synthesia.io/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

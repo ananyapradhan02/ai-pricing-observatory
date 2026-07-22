@@ -1,0 +1,60 @@
+{
+  "company": "Google (Gemini consumer plans)",
+  "slug": "google-gemini",
+  "website": "https://one.google.com/about/google-ai-plans",
+  "category": "foundation_lab",
+  "hq_country": "US",
+  "notes": "The dataset's clearest DOWNWARD repricer: Ultra cut $249.99→$200 (May 2026), Plus cut $7.99→$4.99 with doubled storage (June 2026). Heavy bundling (storage, YouTube Premium, Cloud credits) makes effective price analysis unusually complex. Compute-based limits with model-downgrade soft landing.",
+  "change_events": [
+    {
+      "date": "2026-05-19",
+      "change_type": "plan_restructure",
+      "description": "I/O 2026: Ultra restructured — new $100/mo Ultra tier (5x limits) introduced and top tier cut from $249.99 to $200/mo. Lineage: Feb 2024 'Google One AI Premium' $19.99 → May 2025 rebrand to AI Pro + Ultra launch at $249.99 → Jan 2026 Plus tier ($7.99) → these cuts. One Premium subscribers grandfathered with 2TB.",
+      "announced": true,
+      "notice_period": "immediate",
+      "grandfathering": "legacy One Premium grandfathered",
+      "user_reaction": "Positive",
+      "sources": [ { "url": "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/", "accessed": "2026-07-22", "note": "Primary announcement" } ]
+    },
+    {
+      "date": "2026-06-08",
+      "change_type": "price_decrease",
+      "description": "AI Plus cut from $7.99 (Jan 2026 launch price) to $4.99/mo with storage doubled to 400GB.",
+      "announced": true,
+      "notice_period": "immediate",
+      "grandfathering": "n/a (downward)",
+      "user_reaction": "Positive",
+      "sources": [ { "url": "https://9to5google.com/2026/06/08/google-ai-plus-price-drop/", "accessed": "2026-07-22", "note": "Reported (9to5Google)" } ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "reported",
+      "pricing_models": ["seat"],
+      "free_tier": true,
+      "trial": "free Gemini tier",
+      "plans": [
+        { "name": "AI Plus", "price_usd": 4.99, "billing_unit": "flat/month (reported; launched $7.99 Jan 2026)", "billing_period": "monthly", "whats_gated": "400GB storage, 2x Gemini limits, Pro-model access", "limits": null },
+        { "name": "AI Pro", "price_usd": 19.99, "billing_unit": "flat/month (reported)", "billing_period": "monthly", "whats_gated": "5TB storage, 4x limits, Antigravity/Jules/AI Studio expanded limits, $10/mo Cloud credits, YouTube Premium Lite (added May 2026), Home Premium", "limits": { "quota": "compute-based limits refreshing every 5 hours up to a weekly cap", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "downgrade to smaller models at cap; PAYG top-up AI credits available" } },
+        { "name": "AI Ultra", "price_usd": 200, "billing_unit": "flat/month ('from' — $100 mid-tier at 5x limits exists)", "billing_period": "monthly", "whats_gated": "20TB+, up to 20x limits, Gemini Spark agent, Deep Think, Project Genie, $40 Cloud credits, YouTube Premium", "limits": { "quota": "20x compute limits, 5-hour refresh + weekly cap", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "model downgrade at cap; PAYG top-ups" } }
+      ],
+      "usage_meters": [
+        { "meter": "compute (5-hour refresh windows + weekly cap)", "rate": "PAYG top-up AI credits past cap (Pro/Ultra)", "overage_behavior": "soft landing: downgrade to smaller models, or buy top-up credits" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": false, "reported_minimum": "", "platform_fee": "Family sharing up to 5; heavy bundling (storage, YouTube, Health/Home)" },
+      "sources": [
+        { "url": "https://one.google.com/about/google-ai-plans", "accessed": "2026-07-22", "note": "Primary for structure/gating; dollar amounts not machine-rendered" },
+        { "url": "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/", "accessed": "2026-07-22", "note": "Primary: I/O 2026 restructure + meter mechanics" }
+      ],
+      "change_note": "Initial snapshot — prices flagged for browser verification"
+    }
+  ]
+}

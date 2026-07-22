@@ -1,0 +1,60 @@
+{
+  "company": "Manus (Meta)",
+  "slug": "manus",
+  "website": "https://manus.im",
+  "category": "agent_platform",
+  "hq_country": "US",
+  "notes": "Now owned by Meta ('© 2026 Meta' banner on site). Known pain: no upfront cost estimate per task; Agent Mode can drain a month's credits fast. Notable positive pattern: explicit grandfathering on restructure ('existing members auto-renew at unchanged prices' — primary help center).",
+  "change_events": [
+    {
+      "date": "2025-03-31",
+      "change_type": "plan_added",
+      "description": "Paid launch: Starter $39/mo (3,900 credits), Pro $199/mo (19,900 credits). Later restructured to the current 'Pro' ladder (from $20/4,000 credits) with explicit grandfathering for existing members at unchanged prices.",
+      "announced": true,
+      "notice_period": "immediate",
+      "grandfathering": "full — existing members auto-renew at unchanged prices (primary help center)",
+      "user_reaction": "Launch complaints about credit burn and no upfront task estimates",
+      "sources": [
+        { "url": "https://techcrunch.com/2025/03/31/manus-launches-paid-subscription-plans-and-a-mobile-app", "accessed": "2026-07-22", "note": "Launch coverage" },
+        { "url": "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus", "accessed": "2026-07-22", "note": "Primary: current tiers + grandfathering statement" }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["credit", "hybrid"],
+      "free_tier": true,
+      "trial": "free tier: 300 daily refresh credits; 7-day trial on the $40 Pro rung",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "300 daily refresh credits, 1 concurrent / 2 scheduled tasks, Manus 1.6 Lite only", "limits": { "quota": "300 credits/day refresh", "unlimited_definition": "", "rate_limit": "1 concurrent task", "throttle_behavior": "wait for daily refresh" } },
+        { "name": "Pro (entry rung)", "price_usd": 20, "billing_unit": "flat/month, 4,000 credits (17% annual discount)", "billing_period": "monthly", "whats_gated": "Higher credit allotment, full models", "limits": { "quota": "4,000 credits/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "hard stop / top-up" } },
+        { "name": "Pro (mid rung)", "price_usd": 40, "billing_unit": "flat/month, 8,000 credits", "billing_period": "monthly", "whats_gated": "2x credits, 7-day trial available", "limits": null },
+        { "name": "Pro (top rung)", "price_usd": 200, "billing_unit": "flat/month, 40,000 credits (reported)", "billing_period": "monthly", "whats_gated": "Highest allotment", "limits": null },
+        { "name": "Team", "price_usd": 20, "billing_unit": "per seat/month, 2-seat minimum", "billing_period": "monthly", "whats_gated": "SSO, training opt-out, analytics", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "credits (per task, by compute/tool usage)", "rate": "varies per task; no upfront estimate shown", "overage_behavior": "top-up or wait" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Credits consumed per task based on compute and tool usage",
+        "credit_to_compute_mapping": "Opaque — no pre-run estimate (documented user complaint)",
+        "failed_actions_consume_credits": null,
+        "expiry": "Monthly credits don't roll over; free/bonus credits never expire (reported)",
+        "purchase_mechanics": "subscription allotment; daily refresh on free tier"
+      },
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://help.manus.im/en/articles/11711111-what-is-the-current-membership-pricing-for-manus", "accessed": "2026-07-22", "note": "Primary help center (manus.im/pricing is JS-only)" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}
