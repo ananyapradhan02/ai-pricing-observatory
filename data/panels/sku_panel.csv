@@ -1,0 +1,2 @@
+company,slug,category,hq_country,as_of,confidence,pricing_models,free_tier,has_outcome_pricing,has_credits_system,enterprise_custom,sku,price_usd,billing_unit,billing_period,whats_gated,quota,unlimited_definition,throttle_behavior
+Intercom (Fin),intercom-fin,support_agent,US,2026-07-19,reported,seat|outcome|hybrid,False,True,False,True,Fin (AI agent),0.99,per resolution,usage,AI agent resolutions; billed only when Fin resolves the conversation,,,

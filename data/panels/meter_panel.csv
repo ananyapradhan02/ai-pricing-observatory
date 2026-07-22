@@ -1,0 +1,2 @@
+company,slug,category,hq_country,as_of,confidence,pricing_models,free_tier,has_outcome_pricing,has_credits_system,enterprise_custom,meter,rate_raw,normalized_unit,usd_per_unit,overage_behavior
+Intercom (Fin),intercom-fin,support_agent,US,2026-07-19,reported,seat|outcome|hybrid,False,True,False,True,resolutions,$0.99 per resolution (reported; HubSpot reportedly countered at $0.50 in April 2026),usd_per_resolution,0.99,pay-as-you-go
