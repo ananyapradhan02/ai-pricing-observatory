@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Pricing Observatory — Company Record",
+  "type": "object",
+  "required": ["company", "slug", "category", "snapshots"],
+  "properties": {
+    "company": { "type": "string", "description": "Company name" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "website": { "type": "string" },
+    "category": {
+      "type": "string",
+      "description": "Primary product category",
+      "enum": ["foundation_lab", "coding_agent", "sales_agent", "support_agent", "voice_ai", "search_ai", "gtm_tooling", "agent_platform", "creative_ai", "vertical_agent", "other"]
+    },
+    "hq_country": { "type": "string" },
+    "notes": { "type": "string" },
+    "change_events": {
+      "type": "array",
+      "description": "First-class record of pricing/packaging CHANGES — the dataset's most demanded object. One entry per observed change event.",
+      "items": {
+        "type": "object",
+        "required": ["date", "change_type", "description", "sources"],
+        "properties": {
+          "date": { "type": "string", "format": "date", "description": "Effective date of the change (or announcement date if effective date unknown — note which in description)" },
+          "change_type": {
+            "type": "string",
+            "enum": ["price_increase", "price_decrease", "model_change", "plan_restructure", "limits_change", "credit_conversion", "meter_change", "plan_removed", "plan_added", "other"]
+          },
+          "description": { "type": "string", "description": "What changed, factually" },
+          "announced": { "type": ["boolean", "null"], "description": "Was the change announced in advance? false = silent change discovered by users" },
+          "notice_period": { "type": "string", "description": "e.g. '30 days', 'none', 'unknown'" },
+          "grandfathering": { "type": "string", "description": "Terms for existing customers: 'full', 'none', 'partial — describe', 'unknown'" },
+          "user_reaction": { "type": "string", "description": "Documented backlash/acceptance if notable (cite in sources)" },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["url", "accessed"],
+              "properties": {
+                "url": { "type": "string" },
+                "accessed": { "type": "string", "format": "date" },
+                "note": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "snapshots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["as_of", "confidence", "pricing_models", "sources"],
+        "properties": {
+          "as_of": { "type": "string", "format": "date", "description": "Date this snapshot reflects" },
+          "confidence": { "type": "string", "enum": ["public_page", "reported", "inferred"] },
+          "pricing_models": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "enum": ["seat", "usage", "credit", "outcome", "hybrid", "flat", "custom_only"] },
+            "description": "All models present; 'hybrid' when base fee + meter combined in one plan"
+          },
+          "free_tier": { "type": "boolean" },
+          "trial": { "type": "string", "description": "e.g. '14-day', 'usage-capped', 'none'" },
+          "plans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": { "type": "string" },
+                "price_usd": { "type": ["number", "null"], "description": "null when custom/contact-sales" },
+                "billing_unit": { "type": "string", "description": "e.g. 'per seat/month', 'per resolution', 'per 1K credits', 'flat/month'" },
+                "billing_period": { "type": "string", "enum": ["monthly", "annual", "usage", "one_time", "custom"] },
+                "whats_gated": { "type": "string", "description": "What this tier unlocks vs the one below" },
+                "limits": {
+                  "type": ["object", "null"],
+                  "description": "What the tier's quotas actually mean — limits ARE pricing",
+                  "properties": {
+                    "quota": { "type": "string", "description": "Stated usage quota, e.g. '500 fast requests/mo', 'unlimited*'" },
+                    "unlimited_definition": { "type": "string", "description": "If marketed as unlimited: what actually bounds it (rate limits, fair use, weekly caps)" },
+                    "rate_limit": { "type": "string", "description": "Requests/min, concurrent sessions, etc." },
+                    "throttle_behavior": { "type": "string", "description": "What happens at the limit: hard stop, slowdown, overage billing, model downgrade" }
+                  }
+                }
+              }
+            }
+          },
+          "usage_meters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["meter"],
+              "properties": {
+                "meter": { "type": "string", "description": "What is metered: tokens, resolutions, minutes, credits, tasks, words" },
+                "rate": { "type": "string", "description": "e.g. '$0.99 per resolution', '$5 per 1M tokens'" },
+                "overage_behavior": { "type": "string", "description": "hard cap, pay-as-you-go, top-up, throttle" }
+              }
+            }
+          },
+          "outcome_pricing": {
+            "type": ["object", "null"],
+            "properties": {
+              "outcome_definition": { "type": "string", "description": "What counts as the billable outcome" },
+              "price": { "type": "string" },
+              "guarantee": { "type": "string", "description": "Any refund/SLA if outcome not achieved" }
+            }
+          },
+          "credits_system": {
+            "type": ["object", "null"],
+            "description": "The credit dictionary — answers 'what does a credit actually buy me?'",
+            "properties": {
+              "credit_definition": { "type": "string", "description": "What one credit nominally buys, in the company's own terms" },
+              "credit_to_compute_mapping": { "type": "string", "description": "Observed/documented mapping to real units (tokens, requests, minutes) — 'opaque' is a valid and important answer" },
+              "failed_actions_consume_credits": { "type": ["boolean", "null"], "description": "Do failed/erroneous agent actions burn credits? null = undocumented" },
+              "expiry": { "type": "string" },
+              "purchase_mechanics": { "type": "string", "description": "bundled, top-up, subscription allotment" }
+            }
+          },
+          "predictability": {
+            "type": ["object", "null"],
+            "description": "Bill-shock protections — the buyer-side predictability record",
+            "properties": {
+              "spend_caps_available": { "type": ["boolean", "null"] },
+              "usage_alerts_available": { "type": ["boolean", "null"] },
+              "refund_on_failure_policy": { "type": "string", "description": "Policy on refunding failed/errored agent actions; 'none documented' is valid data" }
+            }
+          },
+          "enterprise": {
+            "type": ["object", "null"],
+            "properties": {
+              "custom_pricing": { "type": "boolean" },
+              "reported_minimum": { "type": "string", "description": "e.g. '$50K/yr reported' — cite source" },
+              "platform_fee": { "type": "string" }
+            }
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["url", "accessed"],
+              "properties": {
+                "url": { "type": "string" },
+                "accessed": { "type": "string", "format": "date" },
+                "note": { "type": "string" }
+              }
+            }
+          },
+          "change_note": { "type": "string", "description": "What changed vs previous snapshot, if anything" }
+        }
+      }
+    }
+  }
+}
