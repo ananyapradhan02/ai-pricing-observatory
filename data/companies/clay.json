@@ -1,0 +1,46 @@
+{
+  "company": "Clay",
+  "slug": "clay",
+  "website": "https://www.clay.com",
+  "category": "gtm_tooling",
+  "hq_country": "US",
+  "notes": "Runs a DUAL-meter system: 'Actions' (platform runs, <$0.01 each) + 'Data Credits' (marketplace data/AI, from $0.05). This split appears to be a recent repricing — older third-party sources describe a single-credit system; effective date unverified, so recorded in notes rather than as a change event pending a source. On-page tile prices and FAQ prices conflict (Launch $167 tile vs $185 FAQ; Growth $446 vs $495) — both primary, both recorded.",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["credit", "hybrid"],
+      "free_tier": true,
+      "trial": "free tier: 500 actions + 100 data credits/mo, unlimited seats",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "500 actions + 100 data credits/mo, unlimited seats/tables, 200 rows/table, Claygent, BYO API keys", "limits": { "quota": "500 actions + 100 data credits/month; 200 rows/table", "unlimited_definition": "unlimited seats and tables — metering happens on actions/credits, not people", "rate_limit": "", "throttle_behavior": "top-up (30% premium) or upgrade" } },
+        { "name": "Launch", "price_usd": 167, "billing_unit": "flat/month (annual tile price; FAQ states 'starting at $185/mo' — conflict recorded)", "billing_period": "monthly", "whats_gated": "15K actions + 2.5–3K data credits/mo; phone enrichment, signals, 50K rows", "limits": { "quota": "15,000 actions + ~3,000 data credits/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "top-ups at 30% premium" } },
+        { "name": "Growth", "price_usd": 446, "billing_unit": "flat/month (annual tile price; FAQ states 'starting at $495/mo' — conflict recorded)", "billing_period": "monthly", "whats_gated": "40K actions + 6K data credits/mo; CRM sync, HTTP API, webhooks, web intent, 1 ads audience, priority support", "limits": { "quota": "40,000 actions + 6,000 data credits/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "top-ups at 30% premium" } },
+        { "name": "Enterprise", "price_usd": null, "billing_unit": "custom", "billing_period": "custom", "whats_gated": "100K+ credits/200K+ actions, SSO, RBAC, dedicated strategist", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "actions (platform runs)", "rate": "<$0.01 per action; no charge on null results", "overage_behavior": "top-up at 30% premium; actions do not roll over" },
+        { "meter": "data credits (marketplace data/AI)", "rate": "from $0.05 per credit; 80% of AI models fixed-credit, token-heavy models variable at token cost with no markup", "overage_behavior": "top-up at 30% premium; roll over to 2x monthly amount (Enterprise: 15% of prior year)" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Dual meter: Actions meter every platform run; Data Credits buy marketplace data and AI calls",
+        "credit_to_compute_mapping": "Partially transparent: fixed credit costs for most AI models, published per-provider data costs; token-heavy models pass through at token cost",
+        "failed_actions_consume_credits": false,
+        "expiry": "Actions: no rollover. Data Credits: roll to 2x monthly amount (Enterprise 15% of prior year)",
+        "purchase_mechanics": "subscription allotment + top-ups at 30% premium; BYO API keys bypass data credits"
+      },
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "No charge on null results (documented on pricing page)"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://www.clay.com/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched (annual billing = save 10%)" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

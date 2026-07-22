@@ -1,0 +1,53 @@
+{
+  "company": "Anthropic (Claude consumer plans)",
+  "slug": "anthropic-claude",
+  "website": "https://claude.com",
+  "category": "foundation_lab",
+  "hq_country": "US",
+  "notes": "Consumer/team subscription plans only (not API). Notable for time-window rate limiting (5-hour rolling sessions + weekly caps) rather than message counts — a leading example of 'limits are pricing.'",
+  "change_events": [
+    {
+      "date": "2025-08-28",
+      "change_type": "limits_change",
+      "description": "Weekly usage limits added on top of 5-hour rolling sessions for Pro/Max: overall weekly cap plus separate Opus cap. Announced July 28, 2025; effective August 28, 2025. Anthropic stated <5% of users affected; aimed at 24/7 Claude Code use and account sharing. Reported ranges at launch: Pro 40–80 hrs Sonnet 4/week; Max 5x 140–280 hrs Sonnet + 15–35 hrs Opus; Max 20x 240–480 + 24–40 (reported only).",
+      "announced": true,
+      "notice_period": "31 days",
+      "grandfathering": "none — applied to existing subscribers",
+      "user_reaction": "Documented developer backlash, esp. Claude Code power users; later temporary weekly-limit boosts reported into 2026",
+      "sources": [
+        { "url": "https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/", "accessed": "2026-07-22", "note": "Announcement coverage" }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["seat", "hybrid"],
+      "free_tier": true,
+      "trial": "free tier",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Basic access, 5-hour session limits", "limits": { "quota": "rolling 5-hour session windows, no fixed message counts", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "wait for window reset or upgrade" } },
+        { "name": "Pro", "price_usd": 20, "billing_unit": "flat/month ($17/mo billed annually at $200)", "billing_period": "monthly", "whats_gated": "Claude Code, Cowork, Research, unlimited projects, more models, M365 integration", "limits": { "quota": "5-hour sessions + weekly overall cap + separate Opus cap; usage pooled across web/desktop/mobile/Claude Code", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "wait, upgrade, or enable usage credits at standard API rates (overage)" } },
+        { "name": "Max", "price_usd": 100, "billing_unit": "flat/month, 'from' price — 5x Pro usage; 20x tier reported at $200/mo", "billing_period": "monthly", "whats_gated": "Higher output limits, early access, priority traffic access", "limits": { "quota": "5x or 20x Pro usage, weekly caps apply", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "same overage mechanism (API-rate usage credits)" } },
+        { "name": "Team Standard", "price_usd": 25, "billing_unit": "per seat/month ($20 billed annually)", "billing_period": "monthly", "whats_gated": "Team workspace, admin", "limits": null },
+        { "name": "Team Premium", "price_usd": 125, "billing_unit": "per seat/month ($100 billed annually)", "billing_period": "monthly", "whats_gated": "Higher usage tier for teams", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "overage usage credits", "rate": "standard API rates when enabled past plan limits", "overage_behavior": "opt-in top-up; otherwise hard wait at cap" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": true,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "Enterprise: $20/seat + usage at API rates (per pricing page)" },
+      "sources": [
+        { "url": "https://claude.com/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched; 20x Max price reported-only (TechCrunch Jul 2025)" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

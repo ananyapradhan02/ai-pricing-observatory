@@ -1,0 +1,48 @@
+{
+  "company": "ElevenLabs",
+  "slug": "elevenlabs",
+  "website": "https://elevenlabs.io",
+  "category": "voice_ai",
+  "hq_country": "US",
+  "notes": "The clearest documented credit system in the dataset: published character-to-credit mapping, rollover rules, and expiry. Creative-tab pricing recorded; Agents and API have separate pricing tabs (future records).",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["credit", "hybrid"],
+      "free_tier": true,
+      "trial": "free tier, 10k credits/mo, no commercial license",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "10k credits/mo, 3 Studio projects, no commercial license", "limits": { "quota": "10,000 credits/month (~10 TTS minutes)", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "top-up or upgrade" } },
+        { "name": "Starter", "price_usd": 6, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "30k credits, commercial license, instant voice cloning", "limits": { "quota": "30,000 credits/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "top-up or upgrade" } },
+        { "name": "Creator", "price_usd": 22, "billing_unit": "flat/month (50% off first month)", "billing_period": "monthly", "whats_gated": "121k credits, professional voice cloning", "limits": { "quota": "121,000 credits/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "top-up or upgrade" } },
+        { "name": "Pro", "price_usd": 99, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "600k credits, 192kbps/44.1kHz PCM API audio", "limits": { "quota": "600,000 credits/month", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "top-up (~$0.17–0.36/extra TTS minute by tier)" } },
+        { "name": "Scale", "price_usd": 299, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "1.8M credits, 3 seats", "limits": null },
+        { "name": "Business", "price_usd": 990, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "6M credits, 10 seats, 5c/min low-latency TTS", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "credits (characters of TTS)", "rate": "1 credit = 1 character (0.5 credits/character on Flash/Turbo models); extra TTS ~$0.36/min (Free tier rate) down to ~$0.17/min (Pro+)", "overage_behavior": "top-up / pay-as-you-go credits" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "1 credit = 1 character of text-to-speech (0.5 for Flash/Turbo models); ~10 TTS minutes on Free up to ~6,000 on Business",
+        "credit_to_compute_mapping": "Published and transparent: character-based, model-dependent multiplier",
+        "failed_actions_consume_credits": null,
+        "expiry": "Subscription credits roll over up to 2x monthly quota (max 3x balance) while subscribed; PAYG credits expire 12 months after purchase, outside rollover; cancel/downgrade forfeits unused credits",
+        "purchase_mechanics": "subscription allotment + top-up/PAYG purchases"
+      },
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "" },
+      "sources": [
+        { "url": "https://elevenlabs.io/pricing", "accessed": "2026-07-22", "note": "Primary pricing page (Creative tab, monthly billing), fetched" },
+        { "url": "https://help.elevenlabs.io", "accessed": "2026-07-22", "note": "Official help center: credit definition and rollover rules (article 27561768104081)" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "company": "OpenAI (ChatGPT consumer plans)",
+  "slug": "openai-chatgpt",
+  "website": "https://chatgpt.com",
+  "category": "foundation_lab",
+  "hq_country": "US",
+  "notes": "Consumer subscription plans only (not API). IMPORTANT DATA CAVEAT: chatgpt.com/pricing renders dollar amounts via JavaScript only — plan structure and gating verified from the page, but every dollar figure below is reported-only from secondary 2026 sources. openai.com/chatgpt/pricing serves a stale GPT-4-era cached page and must not be used. Priority verification target.",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "reported",
+      "pricing_models": ["seat"],
+      "free_tier": true,
+      "trial": "free tier",
+      "plans": [
+        { "name": "Free", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Limited GPT-5.5 Instant, 27K context, limited images/deep research/Codex", "limits": { "quota": "limited messages (counts not published)", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "hard stop / model downgrade" } },
+        { "name": "Go", "price_usd": 8, "billing_unit": "flat/month (reported; may include ads)", "billing_period": "monthly", "whats_gated": "More messages/uploads/images, 54K context", "limits": null },
+        { "name": "Plus", "price_usd": 20, "billing_unit": "flat/month (reported)", "billing_period": "monthly", "whats_gated": "GPT-5.6 reasoning models, 256K reasoning context, projects/tasks/custom GPTs, expanded Codex", "limits": null },
+        { "name": "Pro", "price_usd": 200, "billing_unit": "flat/month (reported; 'from' pricing with 5x/20x sub-tiers, ~$100/$200 reported)", "billing_period": "monthly", "whats_gated": "GPT-5.6 Sol Pro, unlimited* messages/images, 128K instant/400K reasoning context, maximum Codex/deep research", "limits": { "quota": "'unlimited'", "unlimited_definition": "'Unlimited subject to abuse guardrails' (page's own footnote)", "rate_limit": "", "throttle_behavior": "abuse guardrails, undefined publicly" } },
+        { "name": "Business", "price_usd": 25, "billing_unit": "per seat/month (reported: $20–25 annual, $25–30 monthly)", "billing_period": "monthly", "whats_gated": "Team workspace, admin controls", "limits": null }
+      ],
+      "usage_meters": [],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "Enterprise: custom, annual" },
+      "sources": [
+        { "url": "https://chatgpt.com/pricing", "accessed": "2026-07-22", "note": "Primary for structure/gating; dollar amounts JS-rendered and not verifiable by fetch" },
+        { "url": "https://gradually.ai/en/chatgpt-pricing", "accessed": "2026-07-22", "note": "Reported dollar figures (secondary)" }
+      ],
+      "change_note": "Initial snapshot — flagged for browser-based price verification"
+    }
+  ]
+}

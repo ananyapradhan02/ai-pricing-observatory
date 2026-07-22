@@ -1,0 +1,73 @@
+{
+  "company": "Cursor (Anysphere)",
+  "slug": "cursor",
+  "website": "https://cursor.com",
+  "category": "coding_agent",
+  "hq_country": "US",
+  "notes": "The canonical pricing-change case study: June 2025 conversion of the request-based Pro plan into an API-rate credit pool triggered documented backlash, an apology, and refunds. Pro+ ($60) and Ultra ($200) sub-tier prices are reported-only; the live page renders only the $20 base.",
+  "change_events": [
+    {
+      "date": "2025-06-16",
+      "change_type": "credit_conversion",
+      "description": "Pro changed from $20/mo for 500 fast requests to $20/mo API-rate compute credit pool plus unlimited Auto (auto-routed models); Ultra ($200/mo) introduced. Effective usage fell to roughly 225 Sonnet-4 requests vs the former 500. 'Unlimited' applied only to Auto, which was widely misunderstood.",
+      "announced": true,
+      "notice_period": "none — announced via blog but rollout poorly communicated; clarified June 30",
+      "grandfathering": "none for the request model; full refunds offered for surprise charges June 16–July 4 via pro-pricing@cursor.com after July 4 public apology ('we missed the mark')",
+      "user_reaction": "Documented backlash: surprise overages (reports of $350+/week), mass complaints, public apology and refunds",
+      "sources": [
+        { "url": "https://cursor.com/blog/june-2025-pricing", "accessed": "2026-07-22", "note": "Primary: Michael Truell post, July 4 2025 — apology, clarification, refunds" },
+        { "url": "https://www.fintechweekly.com/magazine/articles/cursor-pricing-change-user-backlash-refund", "accessed": "2026-07-22", "note": "Backlash documentation" }
+      ]
+    },
+    {
+      "date": "2025-08-12",
+      "change_type": "plan_restructure",
+      "description": "'Updates to Teams and Auto' — adjustments to Teams plans and Auto usage; Pro+ tier appears on the pricing page in this era (exact launch date not verified from primary source).",
+      "announced": true,
+      "notice_period": "unknown",
+      "grandfathering": "unknown",
+      "user_reaction": "",
+      "sources": [
+        { "url": "https://cursor.com/blog/aug-2025-pricing", "accessed": "2026-07-22", "note": "Primary blog post" }
+      ]
+    }
+  ],
+  "snapshots": [
+    {
+      "as_of": "2026-07-22",
+      "confidence": "public_page",
+      "pricing_models": ["hybrid", "usage", "seat"],
+      "free_tier": true,
+      "trial": "free Hobby tier",
+      "plans": [
+        { "name": "Hobby", "price_usd": 0, "billing_unit": "flat/month", "billing_period": "monthly", "whats_gated": "Limited Agent requests, limited Tab completions", "limits": { "quota": "limited Agent requests (count not published)", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "hard stop until upgrade" } },
+        { "name": "Pro", "price_usd": 20, "billing_unit": "flat/month + usage credit pool", "billing_period": "monthly", "whats_gated": "Set amount of frontier-model usage at API rates + unlimited Tab and Auto-routed models", "limits": { "quota": "credit pool ≈ API-rate value of $20; reported ~225 Sonnet-4 requests equivalent", "unlimited_definition": "'Unlimited' applies to Auto (auto-routed models) only, not frontier model selection", "rate_limit": "", "throttle_behavior": "opt-in on-demand usage billed at cost in arrears; off by default via spend limit" } },
+        { "name": "Pro+", "price_usd": 60, "billing_unit": "flat/month + usage credit pool", "billing_period": "monthly", "whats_gated": "~3x Pro usage (reported only — price not rendered on public page)", "limits": { "quota": "~3x Pro credit pool (reported)", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "same on-demand arrears model" } },
+        { "name": "Ultra", "price_usd": 200, "billing_unit": "flat/month + usage credit pool", "billing_period": "monthly", "whats_gated": "~20x Pro usage (reported only — price not rendered on public page)", "limits": { "quota": "~20x Pro credit pool (reported)", "unlimited_definition": "", "rate_limit": "", "throttle_behavior": "same on-demand arrears model" } },
+        { "name": "Teams", "price_usd": 40, "billing_unit": "per seat/month", "billing_period": "monthly", "whats_gated": "Org features; Standard/Premium sub-tiers (Premium price not rendered)", "limits": null }
+      ],
+      "usage_meters": [
+        { "meter": "model tokens (as dollar credit pool at API rates)", "rate": "API-rate passthrough; on-demand usage billed in arrears", "overage_behavior": "opt-in spend limit; billed at cost in arrears" }
+      ],
+      "outcome_pricing": null,
+      "credits_system": {
+        "credit_definition": "Dollar-denominated compute pool drawn down at model API rates; frontier models consume pool, Auto/Tab do not",
+        "credit_to_compute_mapping": "Transparent in dollars but opaque in requests — per-request cost varies by model and context size (the core of the June 2025 confusion)",
+        "failed_actions_consume_credits": null,
+        "expiry": "monthly allotment; rollover not documented",
+        "purchase_mechanics": "subscription allotment + opt-in on-demand overage"
+      },
+      "predictability": {
+        "spend_caps_available": true,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "none documented"
+      },
+      "enterprise": { "custom_pricing": true, "reported_minimum": "", "platform_fee": "Enterprise: pooled usage, SCIM, audit logs" },
+      "sources": [
+        { "url": "https://cursor.com/pricing", "accessed": "2026-07-22", "note": "Primary pricing page, fetched" },
+        { "url": "https://cursor.com/blog/june-2025-pricing", "accessed": "2026-07-22", "note": "Pricing model mechanics" }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}
