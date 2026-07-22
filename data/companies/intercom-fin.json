@@ -1,0 +1,63 @@
+{
+  "company": "Intercom (Fin)",
+  "slug": "intercom-fin",
+  "website": "https://www.intercom.com",
+  "category": "support_agent",
+  "hq_country": "US",
+  "notes": "Fin is the canonical outcome-pricing case study: per-resolution pricing for an AI support agent, layered on top of Intercom's seat-based platform pricing — a hybrid at company level.",
+  "change_events": [],
+  "snapshots": [
+    {
+      "as_of": "2026-07-19",
+      "confidence": "reported",
+      "pricing_models": ["seat", "outcome", "hybrid"],
+      "free_tier": false,
+      "trial": "14-day",
+      "plans": [
+        {
+          "name": "Fin (AI agent)",
+          "price_usd": 0.99,
+          "billing_unit": "per resolution",
+          "billing_period": "usage",
+          "whats_gated": "AI agent resolutions; billed only when Fin resolves the conversation"
+        }
+      ],
+      "usage_meters": [
+        {
+          "meter": "resolutions",
+          "rate": "$0.99 per resolution (reported; HubSpot reportedly countered at $0.50 in April 2026)",
+          "overage_behavior": "pay-as-you-go"
+        }
+      ],
+      "outcome_pricing": {
+        "outcome_definition": "A customer conversation resolved by the AI agent without human handoff",
+        "price": "$0.99 per resolution (reported)",
+        "guarantee": "No charge for unresolved conversations (the definition of 'resolved' is the contested edge — verify current terms on pricing page)"
+      },
+      "credits_system": null,
+      "predictability": {
+        "spend_caps_available": null,
+        "usage_alerts_available": null,
+        "refund_on_failure_policy": "No charge for unresolved conversations by design of the pricing model; refund policy for misclassified resolutions not documented — verify"
+      },
+      "enterprise": {
+        "custom_pricing": true,
+        "reported_minimum": "",
+        "platform_fee": "Seat-based platform subscription required alongside Fin usage (verify current tiers)"
+      },
+      "sources": [
+        {
+          "url": "https://www.intercom.com/pricing",
+          "accessed": "2026-07-19",
+          "note": "TODO: re-verify directly from pricing page before v0.2 — this snapshot is assembled from reported figures"
+        },
+        {
+          "url": "https://www.getmonetizely.com/blogs/the-2026-guide-to-saas-ai-and-agentic-pricing-models",
+          "accessed": "2026-07-19",
+          "note": "Reported $0.99/resolution figure and HubSpot $0.50 counter"
+        }
+      ],
+      "change_note": "Initial snapshot. First-collected example record; needs public_page verification pass."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "company": "Company Name",
+  "slug": "company-name",
+  "website": "https://example.com",
+  "category": "agent_platform",
+  "hq_country": "US",
+  "notes": "",
+  "snapshots": [
+    {
+      "as_of": "2026-07-19",
+      "confidence": "public_page",
+      "pricing_models": ["hybrid"],
+      "free_tier": true,
+      "trial": "14-day",
+      "plans": [
+        {
+          "name": "Pro",
+          "price_usd": 20,
+          "billing_unit": "per seat/month",
+          "billing_period": "monthly",
+          "whats_gated": "Higher usage limits, priority support"
+        }
+      ],
+      "usage_meters": [
+        {
+          "meter": "credits",
+          "rate": "$10 per 1K credits",
+          "overage_behavior": "top-up"
+        }
+      ],
+      "outcome_pricing": null,
+      "credits_system": null,
+      "enterprise": {
+        "custom_pricing": true,
+        "reported_minimum": "",
+        "platform_fee": ""
+      },
+      "sources": [
+        {
+          "url": "https://example.com/pricing",
+          "accessed": "2026-07-19",
+          "note": "Public pricing page"
+        }
+      ],
+      "change_note": "Initial snapshot"
+    }
+  ]
+}
