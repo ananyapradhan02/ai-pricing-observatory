@@ -61,10 +61,15 @@ The JSON files are the source of truth; `export_panel.py` derives **tidy long-fo
 
 This makes the dataset directly usable for price-dispersion studies, hedonic comparisons ("what does a resolution cost across vendors?"), and survival analysis of pricing models — load the CSV into R/Stata/pandas and go. Never hand-edit the CSVs; regenerate them.
 
+## Current coverage
+
+**25 companies · 94 SKUs · 25 usage meters · 25 documented change events** (as of 2026-07-22), spanning coding agents, foundation labs, support/sales agents, creative AI, voice AI, and GTM tooling. See `data/panels/` for the tidy CSVs.
+
 ## Roadmap
 
-- [x] v0.1 — schema + first 5 hand-collected companies + validator
-- [ ] v0.2 — 25 companies, first schema revision after external methodology review
-- [ ] v0.3 — pricing-page snapshot scraper with change detection
-- [ ] v0.5 — 100 companies, first public analysis thread
-- [ ] v1.0 — 200+ companies, State of AI Pricing Q4 2026
+- [x] v0.1 — schema + first hand-collected companies + validator
+- [x] v0.2 — change-event log, credit dictionary, limits-as-pricing, predictability fields; econometrics panel exports
+- [x] v0.3 — 25 companies across 8 categories
+- [ ] v0.4 — external methodology review (academic collaborator); schema revision
+- [ ] v0.5 — 100 companies; pricing-page snapshot scraper with change detection; first public analysis
+- [ ] v1.0 — 200+ companies, State of AI Pricing Q4 2026, SSRN methods paper, DOI-versioned releases
